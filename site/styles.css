@@ -1,0 +1,7 @@
+body {background-color:rgba(0,80,100,.5);
+        font-family: sans-serif;
+        color:yellow;}
+h1   {font-size: 72px;
+        color:black}
+li {display:inline-block;}
+th {text-align: center;}
