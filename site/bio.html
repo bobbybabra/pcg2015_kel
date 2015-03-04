@@ -6,6 +6,16 @@
 	bio
 	</title>
 <script src="main.js"></script>
+<style>
+#droplabel {
+	padding:5px 10px 5px 10px
+	
+}
+#submitbutton {
+	margin:20px;
+	padding:10px;
+}
+</style>
 </head>
 <body>
 <h2>
@@ -46,64 +56,70 @@ Bob is a dude that lives in Oregon
         </tr>
 </table>
 <form method="post">
- <fieldset >
-<legend>
-	your details:
-</legend>
+<fieldset>
+	<legend>
+	Your details:
+	</legend>
 	<br>
+	<label>
 	Name:
-        <input value=" " input name="name">
+        <input type="text"  id="name" size="25">
+	</label>
 	<br>
+	<label>
 	Email:
-	<input value" " input name="email">
+	<input type="text" name="email" size="25">
 		<br>
-        <input type="submit" value="name">
-		<br>
+        <input type="submit" value="submit" id="emailsubmit">
+	</label>	
+	<br>
 	</fieldset>
 		<hr>
-
+	<fieldset>
 	<legend>
         Your review:
+	</legend>
 	<br>
-	<br>
+	<p>
         How did you hear about us? 
-	<select name="hear">
+	</p>	
+	<label>
+	<select name="hear" class="dropdown" id="droplabel">
         <option value="google">google</option>
         <option value="advert">advert</option>
 	<option value="from a friend">a friend</option>
-        </select>
+	</select>
+        </label>
+	<br>
 		<br>
-		<br>
-	would you visit again?
-	
+	Would you visit again?
+	<br>
 	<lablel>
-	<input type="radio" name="visit" value="Yes">Yes	
+		<input type="radio" name="visit" value="Yes">Yes	
 	</label>
 	<label>
-	<input type="radio" name="visit" value="No">No
+		<input type="radio" name="visit" value="No">No
 	</label>
-	<input type="radio" name="visit" value="Maybe">Maybe
+		<input type="radio" name="visit" value="Maybe">Maybe
 	<br>
 	<br>
-	<textarea name="message" rows=10 cols=30>
+	Comments:
+	<textarea name="message" rows=10 cols=30 id="comments">
 	</textarea>
 	<br>
 	<br>
-	<button type="button" onclick="alert('signup for email')">Submit
-        </legend>
+	<label>
+		<input type="checkbox" name="subscribe">Sign up for email
+	</label>
+	<button type="button" id="submitbutton" onclick="alert('signup for email')">Submit
+	</button>
+	</fieldset>
 <br>
 <br>
 <br>
-<!--
-	<select name="diet" id="eat">
-	<option value="vegetarian">
-	<option value="omnimvours">
-	</select>
-
-	<input value="default text" name="username">
-	<input type="submit" value="make it so">
-
-	<input value="input" name="name" placeholder="username">
-        <input type="button" value="login">
-
 </form>
+<figure class="picborder">
+<img src="bb.jpg" position=right title="The dude named Bob">
+<figurecaption>The dude named Bob</figurecaption>
+</figure>
+
