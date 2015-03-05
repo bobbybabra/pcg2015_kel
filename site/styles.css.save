@@ -1,0 +1,24 @@
+body {background-color:rgba(0,80,100,.5);
+        font-family: sans-serif;
+        color:yellow;}
+h1   {focolor: white;
+  text-shadow: 0    0   2px #fefcc9,
+               1px -1px 3px #feec85,
+              -2px -2px 4px #ffae34,
+               2px -4px 5px #ec760c,
+              -2px -6px 6px #cd4606,
+               0   -8px 7px #973716,
+               1px -9px 8px #451b0e;nt-size: 72px;
+        color:black}
+h1.h1index {
+	
+}
+li {display:inline-block;}
+th {text-align: center;}
+li.homelink {
+	color:red;
+	padding:10px;
+	border:10px; 
+	color:black;
+}
+a:hover{color: white}
