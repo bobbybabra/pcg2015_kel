@@ -25,4 +25,30 @@ li.homelink {
 	border:10px; 
 	color:black;
 }
+.welcomeBox {
+	padding: 5px;
+	background-color: light grey;
+}
+table, th, td {
+	font-size: 12px;
+	border: 2px solid black;
+}
+th {
+	background-color: green;
+	color: gold;
+}
+td {
+	padding: 5px;
+}
+tr.even {
+	background-color:pink;
+}
+.money {
+	text-align: right;
+}
+.totalRow {
+	background-color: #FF9966;
+	color: black;
+	text-align: right;
+}
 a:hover{color: white}

@@ -10,12 +10,12 @@
 cart
 </title>
 <form method="post">
-<fieldset>
+<fieldset class="welcomeBox">
     <legend>
-        Welcome Cosumer(whore)
+        Welcome Cosumer
     </legend>
     <br>
-        Name:
+        Name :
         <input type="text" id="namebox" size="30">
         <br>
         Email:
@@ -24,11 +24,12 @@ cart
         Phone:
          <input type="text" id="phonebox" size="30">
         <br>
-
+<body>
 </fieldset>
 <fieldset>
-<div><table>
-        <tr>
+<div>
+    <table id="cart-1">
+        <tr class="headerRow">
                 <th>
                     Item:
                 </th>
@@ -50,49 +51,137 @@ cart
                 <th>
                     Actions:
                 </th>
-</div>
+
         </tr>
-        <div><tr>
-            <td>
+
+        <tr class="cart-line" id="lineRow1">
+            <td class="line-number">
                 1
             </td>
-            <td>
-                <input type="number" id="tr1number"
+            <td class="line-quantity" >
+                <input type="number" value="4">
             </td>
-            <td>
-                <input type="text" id="tr1PCode"
+            <td class="line-product-code">
+                <input type="text" id="tr1PCode" value="UPC12345">
             </td>
-            <td>
-                <input type="text" id="tr1PDesc"
+            <td class="line-product-description">
+                <input type="text" id="tr1PDesc" value="Jet-Rocket-Backpack">
             </td>
-            <td>
-                <input type="text" id="tr1Price"
+            <td class="money line-price-each" id="tr1Price">
+                32
             </td>
-            <td>
-                <input type="text" id="subtotal"
+            <td class="money line-subtotal" id="subtotal1">
+                32
             </td>
-            <td>
-                <a>
-                    remove
+            <td class="line-actions">
+                <a
+                    href="#remove">remove
                 </a>
             </td>
         </tr>
-        </div>
-        <tr>
-                <td>
-                        2
-                </td>
-                <td>
-                        <input type="number" id="tr2number"
-                </td>
+
+        <tr class="cart-line" id="lineRow2">
+            <td class="line-number">
+                2
+            </td>
+            <td class="line-quantity">
+                <input type="number" id="tr2number" value="4">
+            </td>
+            <td class="line-product-code">
+                <input type="text" id="tr2PCode" value="UPC456">
+            </td>
+            <td class="line-product-description" >
+                <input type="text" id="tr2PDesc" value="brass tacks">
+            </td>
+            <td class="money line-price-each" id="tr2Price">
+                5
+            </td>
+            <td class="money line-subtotal" id="subtotal2">
+                37
+            </td>
+            <td class="line-actions">
+                <a
+                    href="#remove">remove
+                </a>
         </tr>
-        <tr>
-                <td>
-                        3
-                </td>
-                <td>
-                        <input type="number" id="tr3number"
-                </td>
+        <tr class="cart-line" id="lineRow3">
+            <td class="line-number">
+                3
+            </td>
+            <td class="line-quantity">
+                <input type="number" id="tr3number" value="2">
+            </td>
+            <td class="line-product-code" >
+                <input type="text" id="tr3PCode" value="UPC789">
+            </td>
+            <td class="line-product-description">
+                <input type="text" id="tr3PDesc" value="hammer">
+            </td>
+            <td class="money line-price-each">
+                123
+            </td>
+            <td class="money line-subtotal" id="subtotal3">
+                234
+            </td>
+            <td class="line-actions">
+                <a
+                    href="#remove">remove
+                </a>
         </tr>
+
+    <tr class="cart-line-total" id="lastRow">
+            <td class="line-number" colspan="5" id="totalName" align="right">
+                Total:
+            </td>
+            <td id="cart-total">
+                456
+            </td>
+            <td class="line-actions">
+                    &nbsp;
+            </td>
+    </tr>
 </table>
 </fieldset>
+</div>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var table = document.getElementById("cart-1");
+        var lines = table.getElementsByClassName("cart-line")
+        var line_count = lines.length;
+
+
+        var getTotal = function () {
+            var total = 0;
+
+            for (var i = 0; i < line_count; i++) {
+                var line = lines[i];
+
+                var qty = line.getElementsByClassName("line-quantity")[0];
+                var quantity = parseFloat(qty.getElementsByTagName("input")[0].value);
+
+                var price = parseFloat(line.getElementsByClassName("line-price-each")[0].innerHTML);
+                var subtotalElement = line.getElementsByClassName("line-subtotal")[0];
+
+                var subTotal = quantity * price;
+                subtotalElement.innerHTML = subTotal;
+                total += subTotal;
+            }
+            var totalElement = document.getElementById("cart-total");
+            totalElement.innerHTML = total;
+        };
+
+        for (var c = 0; c < line_count; c++) {
+            var line = lines[c];
+            var quantityElement = line.getElementsByTagName("input")[0];
+            quantityElement.addEventListener("change", function () {
+                getTotal();
+            });
+        }
+        getTotal();
+    });
+
+</script>
+</body>
+</html>
