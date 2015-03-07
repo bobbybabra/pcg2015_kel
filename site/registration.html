@@ -1,0 +1,124 @@
+<! doctype html>
+
+<html>
+
+<head>
+
+<link href="styles.css" type="text/css" rel="stylesheet">
+
+<title>
+registration
+</title>
+    </head>
+<body>
+<header>
+    <div class="columnSide left">
+        <div class="title">
+            Welcome
+        </div>
+
+        <div class="subtitle">
+
+        </div>
+
+    </div>
+
+    </div>
+</header>
+<form class="registrationForm" method="post">
+<fieldset class="welcomeBox" id="registration">
+    <legend>
+        Registration
+    </legend>
+        <br>
+        Name:
+        <input type="text" id="username" size="30">
+    <br>
+    <br>
+        Birthday (must be over 18):
+    <br>
+    <div>
+        <input type="date" class="BD" id="dateofbirth">
+        <br>
+    </div>
+    <br>
+    <br>
+        email:
+         <input type="email" class="email" id="email">
+    <br>
+    <br>
+        password:
+         <input type="password" class="password" id="password">
+    <br>
+        <br>
+        verify password:
+         <input type="password" class="passVerify" id="verify-password">
+    <br>
+    <br>
+        Phone:
+         <input type="text" class="phoneNumber" id="phonebox">
+        <br>
+    <br>
+    <br>
+    <input type="submit" id="submitbutton" value="Register">
+    <br>
+
+</fieldset>
+</form>
+
+
+<script>
+
+    var regForm = document.getElementById("registration");
+
+    function validateForm() {
+        /* how could we organize this code and make it more reusable? */
+        var errors = document.getElementById("errors");
+        var error_list = [];
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var verifyPassword = document.getElementById("verify-password").value;
+        var dobValue = document.getElementById("dateofbirth").value;
+        var dob = new Date(dobValue);
+        var now = new Date();
+        var ageDiff = new Date()
+        var nowMS = now.getTime();
+        var dobMS = dob.getTime();
+        var iDiff= nowMS - dobMS;
+        ageDiff.setTime(iDiff);
+        var age = parseInt(ageDiff.getFullYear()) - 1970;
+
+        if (password != verifyPassword) {
+            error_list.push("Password and Verify Password must match");
+        }
+
+        if (password.length < 8) {
+            error_list.push("Password must be at least 8 letters or numbers.");
+        }
+
+        if (username.length < 3) {
+            error_list.push("Username must be at least 3 letters or numbers.");
+        }
+
+        if (email.length < 3) {
+            error_list.push("Email must be at least 3 letters or numbers.");
+        }
+
+        if (age < 21) {
+            error_list.push("Age must be over 21");
+        }
+
+        errors.innerHTML = error_list.join("<br>");
+    }
+    regForm.addEventListener("submit", function(event){
+        event.preventDefault();
+        validateForm();
+    });
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-body {background-color:rgba(0,80,100,.5);
+body {background-color:rgba(0,20,40,.5);
         font-family: courier;
         color:yellow;}
 h1   {font-size: 72px;
@@ -15,7 +15,7 @@ h1.h1index {
 }
 figure.picborder {
 	border: dotted orange;
-	border-width:20px;
+	border-width:7px;
 }
 li {display:inline-block;}
 th {text-align: center;}
@@ -40,13 +40,20 @@ th {
 td {
 	padding: 5px;
 }
-tr.even {
-	background-color:pink;
+.registrationForm {
+	border: solid red;
+	background-color: black;
+	padding: 18px;
+	display: inline-block;
+}
+.registrationForm input {
+	float: right;
+	width: 190px;
 }
 .money {
 	text-align: right;
 }
-.totalRow {
+.cart-line-total {
 	background-color: #FF9966;
 	color: black;
 	text-align: right;
