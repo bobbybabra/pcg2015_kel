@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+<script>
+var x = 1;
+
+var y = 2, z = 3;
+
+	// assign without using var
+	g = 1;
+		// identical to
+		window.g = 1;
+
+
+function incr_global () { g++; }
+
+x = 1;
+
+
+	var result = (0 == false);
+	// result will be true
+	document.write(result);
+
+    coins = {
+        1:6,
+        5:4,
+        10:2,
+        25:1
+    }
+
+    function total(coins){
+        for (denomination in coins){
+            console.log(denomination + denomination(coins))
+        }
+
+    }
+
+    console.log(total(coins));
+
+    function total(coins){
+        var pennies = 0;
+        for (var key in coins){
+            var quantity = coins[key];
+            pennies += key * quantity;
+        }
+        return pennies;
+    }
+document.write("<h1>Total:" + total(coins)+"</h1>")
+</script>
+</body>
+</html>
