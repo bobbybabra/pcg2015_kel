@@ -64,8 +64,51 @@ document.write("<h1>Total:" + total(coins)+"</h1>")
     ];
 
     function getDollars(coins_two){
-        
+
     }
+
+/***********************************************************/
+    //PART 2
+    coins_array_list_of_object_dictionaries = [
+        {
+            "name": "pennies",
+            "value": 1,
+            "quantity": 6
+        },
+        {
+            "name": "nickel",
+            "value": 5,
+            "quantity": 4
+        },
+        {
+            "name": "dimes",
+            "value": 10,
+            "quantity": 2
+        },
+        {
+            "name": "quarters",
+            "value": 25,
+            "quantity": 1
+        }
+    ];
+
+    var getDollars = function (coins) {
+        var pennies = 0;
+        for (var i = 0; i < coins.length; i++) {
+            var obj = coins[i];
+            pennies += obj.quantity * obj.value;
+
+            console.log(
+                    obj.quantity
+                    + " " + obj.name
+                    + " is " + obj.quantity * obj.value
+                    + " running total is " + pennies/100
+            );
+        }
+        return pennies / 100;
+    };
+    console.log("$" + getDollars(coins_array_list_of_object_dictionaries));
+
 </script>
 </body>
 </html>

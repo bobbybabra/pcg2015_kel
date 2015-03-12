@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    tenants = [
+        {
+            "name": "Kevin Long",
+            "suite": 111
+        },
+        {
+            "name": "Kay Long",
+            "suite": 112
+        },
+        {
+            "name": "John Long",
+            "suite": 113
+        },
+        {
+            "name": "Jack Richards",
+            "suite": 211
+        },
+        {
+            "name": "Arthur Wright",
+            "suite": 212
+        },
+        {
+            "name": "abc",
+            "suite": 123
+        },
+        {
+            "name": "31 flavors",
+            "suite": 231
+        },
+        {
+            "name": "!@#$%^&*()",
+            "suite": 213
+        }
+    ];
+    var directory = {};
+    for (var i in tenants) {
+        var t = tenants[i];
+        var first_letter = t["name"][0].toUpperCase();
+        if (!directory.hasOwnProperty(first_letter)) {
+            directory[first_letter] = [];
+        }
+        directory[first_letter].push(t);
+ 
+    }
+//    p = tenants["name"].split(" ");
+//    if (p.length > 1);
+//    letter = p[1][0];
+
+//    for (j in directory) {
+//        var k = directory[j];
+//        var one = k[let.charCode()];
+//        console.log(one);
+//    }
+
+//    for(var i=97; i<123; i++){
+//        var st= String.fromCharCode(i);
+//        document.write(st + "<br>");
+//    }
+
+a = "a".charCodeAt(0);
+z = "z".charCodeAt(0);
+for (var c = a; c <= z; c++) {
+    var letter = String.fromCharCode(c);
+    //document.write(letter);
+    //document.write(c + "=" + letter+"<br>");
+}
+
+az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+for (var i = 0; i < az.length; i++) {
+    document.write(az[i]);
+    //document.write(i + "="+az[i]);
+}
+
+function isAlpha(c){
+    var u = c.toUpperCase();
+    return !(az.indexOf(u) == -1);
+}
+    function isAlpha(c){
+        var u = c.toUpperCase();
+        return !(az.indexOf(u) == -1)
+    }
+
+//    if(!letter.isAlpha) {
+//        letter = "*";
+//    }
+
+    for (letter in directory) {
+        var d = directory[letter];
+        document.write("===" + letter + "===" + "<br>");
+        for (i in d) {
+            var t = d[i];
+            document.write(" " + t["name"] + " " + t["suite"] + "<br>");
+        }
+
+    }
+</script>
+<a href=#a>A</a>
+<a href=#b>B</a>
+<a href=#c>C</a>
+<a href=#d>D</a>
+<a href=#e>E</a>
+<a href=#f>F</a>
+<a href=#g>G</a>
+<a href=#h>H</a>
+<a href=#i>I</a>
+<a href=#j>J</a>
+<a href=#k>K</a>
+<a href=#l>L</a>
+<a href=#m>M</a>
+<a href=#n>N</a>
+<a href=#o>O</a>
+<a href=#p>P</a>
+<a href=#q>Q</a>
+<a href=#r>R</a>
+<a href=#s>S</a>
+<a href=#t>T</a>
+<a href=#u>U</a>
+<a href=#v>V</a>
+<a href=#w>W</a>
+<a href=#x>X</a>
+<a href=#y>Y</a>
+<a href=#z>Z</a>
+</bodyz
+</htmz
