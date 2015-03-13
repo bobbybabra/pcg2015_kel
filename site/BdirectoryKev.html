@@ -40,16 +40,17 @@
             "suite": 213
         }
     ];
-    var directory = {};
-    for (var i in tenants) {
-        var t = tenants[i];
-        var first_letter = t["name"][0].toUpperCase();
-        if (!directory.hasOwnProperty(first_letter)) {
-            directory[first_letter] = [];
-        }
-        directory[first_letter].push(t);
- 
-    }
+
+//    var directory = {};
+//    for (var i in tenants) {
+//        var t = tenants[i];
+//        var first_letter = t["name"][0].toUpperCase();
+//        if (!directory.hasOwnProperty(first_letter)) {
+//            directory[first_letter] = [];
+//        }
+//        directory[first_letter].push(t);
+//
+//    }
 //    p = tenants["name"].split(" ");
 //    if (p.length > 1);
 //    letter = p[1][0];
@@ -65,42 +66,102 @@
 //        document.write(st + "<br>");
 //    }
 
-a = "a".charCodeAt(0);
-z = "z".charCodeAt(0);
-for (var c = a; c <= z; c++) {
-    var letter = String.fromCharCode(c);
+//a = "a".charCodeAt(0);
+//z = "z".charCodeAt(0);
+//    for (var c = a; c <= z; c++) {
+//        var letter = String.fromCharCode(c);
+
     //document.write(letter);
     //document.write(c + "=" + letter+"<br>");
-}
+//}
 
 az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-for (var i = 0; i < az.length; i++) {
-    document.write(az[i]);
-    //document.write(i + "="+az[i]);
+    for (var i = 0; i < az.length; i++) {
+        createIndexItem(az[i]);
+                //document.write(az[i]);
+        //document.write(i + "="+az[i]);
 }
 
-function isAlpha(c){
-    var u = c.toUpperCase();
-    return !(az.indexOf(u) == -1);
-}
-    function isAlpha(c){
-        var u = c.toUpperCase();
-        return !(az.indexOf(u) == -1)
+    function createIndexItem(letter) {
+        var hash = letter.toLowerCase();
+        var display = letter.toUpperCase();
+        var anchorElement = document.createElement("a");
+        anchorElement.setAttribute("href", "#" + hash);
+        var text = document.createTextNode(display);
+        anchorElement.appendChild(text);
+        document.body.appendChild(anchorElement);
     }
 
+    a = "a".charCodeAt(0);
+    z = "z".charCodeAt(0);
+    for (var c = a; c <= z; c++) {
+        var letter = String.fromCharCode(c);
+        createIndexItem(letter);
+    }
+//
+//    function isAlpha(c){
+//        var u = c.toUpperCase();
+//        return !(az.indexOf(u) == -1);
+//}
+//    function isAlpha(c){
+//        var u = c.toUpperCase();
+//        return !(az.indexOf(u) == -1)
+//    }
+//
 //    if(!letter.isAlpha) {
 //        letter = "*";
 //    }
 
+    var directory = {};
+    for (var i in tenants) {
+        var t = tenants[i];
+        var first_letter = t["name"][0];
+        if (!directory.hasOwnProperty(first_letter)) {
+            directory[first_letter] = [];
+        }
+        directory[first_letter].push(t);
+
+    }
+
+//    for (letter in directory) {
+//        var d = directory[letter];
+//        document.write("===" + letter + "===" + "<br>");
+//        for (i in d) {
+//            var t = d[i];
+//            document.write(" " + t["name"] + " " + t["suite"] + "<br>");
+//        }
+//
+//    }
+
     for (letter in directory) {
         var d = directory[letter];
-        document.write("===" + letter + "===" + "<br>");
+        anchorElement = letter;
+        anchorElement.setAttribute("===" +  "href", "#" + letter + "===" + "<br>");
         for (i in d) {
             var t = d[i];
-            document.write(" " + t["name"] + " " + t["suite"] + "<br>");
+            (" " + t["name"] + " " + t["suite"] + "<br>");
         }
 
     }
+
+//SORT AN ARRAY OF STRINGS
+	var list = ["Dog","Cat","Zebra","Pony"];
+	list.sort();
+	console.log(list);
+
+//SORT AN ARRAY OF OBJECTS CONTAINING A STRING
+	var object_list = [{"name":"Dog"},{"name":"Cat"},{"name":"Zebra"},{"name":"Pony"}];
+	object_list.sort(function(a,b){ //anonymous fxn
+    	if(a.name > b.name){
+        	return 1;
+    	}else if(a.name < b.name){
+        	return -1;
+    	}else{  //add complexity here by compairing other values in object
+        return 0;
+    		}
+	});
+
+
 </script>
 <a href=#a>A</a>
 <a href=#b>B</a>
@@ -128,5 +189,6 @@ function isAlpha(c){
 <a href=#x>X</a>
 <a href=#y>Y</a>
 <a href=#z>Z</a>
-</bodyz
-</htmz
+
+</body>
+</html>
